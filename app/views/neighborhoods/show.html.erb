@@ -11,7 +11,19 @@
       <dt>City</dt>
       <dd><%= @neighborhood.city %></dd>
 
-    </dl>
+
+      <dt>Venues</dt>
+      <dd>
+      <ul class="list-group">
+        <% Venue.where(:neighborhood_id=> @neighborhood.id).each do |venues| %>
+        <li class="list-group-item">
+          <%= venues.name %>
+        </li>
+        <% end %>
+      </ul>
+      </dd>
+  </dl>
+
 
     <div class="btn-group btn-group-justified">
       <a href="/neighborhoods" class="btn btn-primary">

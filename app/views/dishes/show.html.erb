@@ -9,7 +9,19 @@
       <dd><%= @dish.name %></dd>
 
       <dt>Cuisine</dt>
-      <dd><%= @dish.cuisine_id %></dd>
+      <dd><%= @dish.cuisines %></dd>
+
+        <dt>Venues</dt>
+      <dd>
+      <ul class="list-group">
+        <% Venue.where(:dish_id=> @dish.id).each do |venues| %>
+        <li class="list-group-item">
+          <%= venues.name %>
+        </li>
+        <% end %>
+      </ul>
+      </dd>
+
 
     </dl>
 

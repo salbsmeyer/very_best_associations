@@ -8,7 +8,19 @@
       <dt>Name</dt>
       <dd><%= @cuisine.name %></dd>
 
-    </dl>
+
+      <dt>Dishes</dt>
+      <dd>
+      <ul class="list-group">
+        <% Dish.where(:cuisine_id => @cuisine.id).each do |dish| %>
+        <li class="list-group-item">
+          <%= dish.name %>
+        </li>
+        <% end %>
+      </ul>
+    </dd>
+      </dl>
+
 
     <div class="btn-group btn-group-justified">
       <a href="/cuisines" class="btn btn-primary">
