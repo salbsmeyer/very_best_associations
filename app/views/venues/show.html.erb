@@ -16,6 +16,18 @@
 
     </dl>
 
+          <dt>Favorites</dt>
+      <dd>
+      <ul class="list-group">
+        <% Favorie.where(:venue_id=> @venue.id).each do |favorite| %>
+        <li class="list-group-item">
+          <%= favorite.name %>
+        </li>
+        <% end %>
+      </ul>
+      </dd>
+  </dl>
+
     <div class="btn-group btn-group-justified">
       <a href="/venues" class="btn btn-primary">
         Back

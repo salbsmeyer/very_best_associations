@@ -5,4 +5,10 @@ class Venue < ActiveRecord::Base
     has_many :favorites
     belongs_to :cuisine
     belongs_to :neighborhood
+
+
+  def favorite
+    return Favorite.find_by(:id => self.user_id)
+  end
+
 end
