@@ -5,4 +5,5 @@ class Dish < ActiveRecord::Base
   belongs_to :users
   belongs_to  :neighborhood
   has_many :favorites
+
 end

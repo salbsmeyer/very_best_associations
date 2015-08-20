@@ -2,23 +2,29 @@
   <h3>User #<%= @user.id %></h3>
 </div>
 
+
+
 <div class="row">
   <div class="col-md-12">
     <dl class="dl-horizontal">
       <dt>Username</dt>
       <dd><%= @user.username %></dd>
-<dt>Favorites </dt>
-<dd><ul class ="list-group">
-<% @users.favorites.each do |favorite| %>
-<li class="list-group-item">
-<%= favorite.dish.name %> at <% favorite.venue.name %>
-</li>
-<% end %>
-</ul>
-</dd>
-</dl>
-</div>
+      <dt>Favorites</dt>
+      <dd><ul class="list-group">
+      <% @user.favorites.each do |favorite| %>
+      <li class="list-group-item">
+      <%= favorite.dish.name %> at <%= favorite.venue.name %>
+      </li>
+      <% end %>
+      </ul>
+      </dd>
+      </dl>
+      </div>
 
+
+<button class="btn btn-success">
+  Create Favorite
+</button>
 
     <div class="btn-group btn-group-justified">
       <a href="/users" class="btn btn-primary">

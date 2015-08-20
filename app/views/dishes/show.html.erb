@@ -21,7 +21,42 @@
         <% end %>
       </ul>
       </dd>
+<!-- favorite dishes; print venue names and usernames -->
 
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Dish</dt>
+      <dd><%= @dish.name %></dd>
+      <dt>Favorites</dt>
+      <dd><ul class="list-group">
+      <% @dish.favorites.each do |favorite| %>
+      <li class="list-group-item">
+      <%= favorite.venue.name %> : <%= favorite.user.id %>
+      </li>
+      <% end %>
+      </ul>
+      </dd>
+      </dl>
+      </div>
+
+
+<button class="btn btn-success">
+  Create Favorite
+</button>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/dishes" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/dishes/<%= @dish.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_dish/<%= @dish.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
 
     </dl>
 
