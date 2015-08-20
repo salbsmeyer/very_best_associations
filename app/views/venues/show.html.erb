@@ -19,7 +19,7 @@
           <dt>Favorites</dt>
       <dd>
       <ul class="list-group">
-        <% Favorie.where(:venue_id=> @venue.id).each do |favorite| %>
+        <% Favortie.where(:venue_id=> @venue.id).each do |favorite| %>
         <li class="list-group-item">
           <%= favorite.name %>
         </li>

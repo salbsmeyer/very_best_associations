@@ -11,5 +11,9 @@ class Neighborhood < ActiveRecord::Base
     return User.find_by(:id => self.user_id)
   end
 
+  def venue
+    return Venue.find_by(:id => self.name)
+  end
+
 end
 
