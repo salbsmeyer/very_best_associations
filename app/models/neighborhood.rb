@@ -15,5 +15,10 @@ class Neighborhood < ActiveRecord::Base
     return Venue.find_by(:id => self.name)
   end
 
+class Neighborhood < ActiveRecord::Base
+  has_many :venues
+  has_many :favorites, :through => :venues
+end
+
 end
 
